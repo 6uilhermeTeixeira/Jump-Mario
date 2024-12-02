@@ -4,13 +4,26 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Para centralizar verticalmente */
+    background-color: #f0f0f0; /* Cor de fundo para o corpo */
+}
+
+.game-container {
+    width: 1000px; /* Largura fixa */
+    height: 600px; /* Altura fixa */
+    overflow: hidden; /* Esconder qualquer conteúdo que ultrapasse o contêiner */
+    position: relative; /* Para posicionamento absoluto dos elementos dentro */
+}
+
 .game-board {
     width: 100%;
-    height: 500px;
+    height: 100%; /* Usar a altura total do contêiner */
     border-bottom: 15px solid green;
-    margin: 0 auto;
     position: relative;
-    overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
@@ -35,6 +48,28 @@
     position: absolute;
     width: 550px;
     animation: clouds-animation 20s infinite linear;
+}
+
+#score, #speed {
+    position: absolute;
+    top: 10px; /* Posição no topo do jogo */
+    font-size: 24px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    background-color: white; /* Fundo branco */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    z-index: 10; /* Para garantir que fique acima de outros elementos */
+}
+
+/* Posiciona a pontuação no canto superior esquerdo */
+#score {
+    left: 10px; /* Posição à esquerda */
+}
+
+/* Posiciona a velocidade no canto superior direito */
+#speed {
+    right: 10px; /* Posição à direita */
 }
 
 @keyframes pipe-animation {
